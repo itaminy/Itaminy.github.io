@@ -1,32 +1,99 @@
 <li><a href="http://kubsu.ru/">КубГУ</a> </li>
 <li><a href="https://kubsu.ru/">КубГУ</a> </li>
-<li><a href="img src="image.jpg" alt="Цветок" style="width: 600px;"></a></li>
-<li><a href="https://www.dota2.com/home"</a></li>
-<li><a href="/">Главная Dota 2</a></li>
-<li><a href="#heroes">Перейти к героям</a></li>
-<li><h2 id="heroes">Секция героев Dota 2</h2></li>
-<li><a href="https://www.dota2.com/store?item=arcana&hero=invoker&price=high">Аркана Invoker</a></li>
-<li><a href="https://www.dota2.com/news?id=123">Новость №123</a></li>
-<li><a href="about/team.html">О команде</a></li>
-<li><a href="../index.html">Главная Dota 2 (уровнем выше)</a></li>
-<li><a href="../../heroes.html">Список героев (двумя уровнями выше)</a></li>
-<li><a href="https://www.dota2.com/news">официальном сайте Dota 2</a></li>
-<li><a href="https://en.wikipedia.org/wiki/Dota_2#Gameplay">Геймплей Dota 2 на Википедии</a></li>
-<img src="dota2map.jpg" usemap="#dota2map" alt="Карта Dota 2">
-<map name="dota2map">
-  <area shape="rect" coords="34,44,270,350" href="https://www.dota2.com/heroes" alt="Герои">
-  <area shape="circle" coords="500,150,60" href="https://www.dota2.com/items" alt="Предметы">
-</map>
-<li><a href="">Пустая ссылка</a></li>
-<li><a>Ссылка без href</a></li>
-<li><a href="https://www.dota2.com/secret" 
-<meta name="robots" content="noindex">
-<ol>
-  <li><a href="https://www.dota2.com/heroes" title="Список героев Dota 2">Герои</a></li>
-  <li><a href="https://www.dota2.com/items" title="Список предметов Dota 2">Предметы</a></li>
-  <li><a href="https://www.dota2.com/esports" title="Соревнования и киберспорт">Киберспорт</a></li>
-</ol>
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Ссылки и форма</title>
+</head>
+<body>
 
+    <h1>Различные типы ссылок</h1>
 
+    <p><a href="http://kubsu.ru">КубГУ</a></p>
+    <p><a href="https://kubsu.ru">КубГУ (HTTPS)</a></p>
+    <p><a href="https://kubsu.ru"><img src="https://via.placeholder.com/100x50" alt="КубГУ" width="100" height="50"></a></p>
+    <p><a href="/faculty">Факультеты</a></p>
+    <p><a href="/">Главная</a></p>
+    <p><a href="#footer">Перейти к футеру</a></p>
+    <p><a href="https://example.com/search?q=query&sort=date&page=1">Поиск с параметрами</a></p>
+    <p><a href="https://example.com/user?id=12345">Профиль пользователя</a></p>
+    <p><a href="contacts.html">Контакты</a></p>
+    <p><a href="about/history.html">История</a></p>
+    <p><a href="../news.html">Новости</a></p>
+    <p><a href="../../index.html">Главная портала</a></p>
+    <p>Официальный сайт <a href="https://kubsu.ru">Кубанского государственного университета</a> содержит информацию о факультетах и специальностях.</p>
+    <p><a href="https://developer.mozilla.org/ru/docs/Web/HTML/Element/a#attributes">Документация MDN (фрагмент)</a></p>
+    <p>
+        <img src="https://via.placeholder.com/200x100" alt="Image map" usemap="#examplemap" width="200" height="100">
+        <map name="examplemap">
+            <area shape="rect" coords="0,0,100,50" href="https://kubsu.ru" alt="Прямоугольная область">
+            <area shape="circle" coords="150,50,25" href="https://kubsu.ru/faculty" alt="Круглая область">
+        </map>
+    </p>
+    <p><a href="">Обновить страницу</a></p>
+    <p><a>Неактивная ссылка</a></p>
+    <p><a href="https://kubsu.ru/admin" rel="nofollow">Панель администратора</a></p>
+    <p><a href="https://kubsu.ru/temp-page" rel="noindex">Временная страница</a></p>  
+    <ol>
+        <li><a href="https://kubsu.ru" title="Официальный сайт КубГУ">Главный сайт</a></li>
+        <li><a href="https://edu.kubsu.ru" title="Электронное обучение">Образовательный портал</a></li>
+        <li><a href="https://library.kubsu.ru" title="Научная библиотека">Библиотека</a></li>
+    </ol>
+    <p><a href="ftp://user:password@ftp.kubsu.ru/public/file.pdf">Скачать документ (FTP)</a></p>
+    <h1>Анкета разработчика</h1>
+    <form action="#" method="post">
+        <p>
+            <label for="fio">ФИО:</label><br>
+            <input type="text" id="fio" name="fio" required>
+        </p>
+        <p>
+            <label for="phone">Телефон:</label><br>
+            <input type="tel" id="phone" name="phone" pattern="[\+]\d{1}\s?[\(]\d{3}[\)]\s?\d{3}[\-]\d{2}[\-]\d{2}" placeholder="+7(999)999-99-99" required>
+        </p>
+        <p>
+            <label for="email">E-mail:</label><br>
+            <input type="email" id="email" name="email" placeholder="example@mail.ru" required>
+        </p>
+        <p>
+            <label for="birthdate">Дата рождения:</label><br>
+            <input type="date" id="birthdate" name="birthdate" required>
+        </p>
+        <p>
+            Пол:<br>
+            <input type="radio" id="male" name="gender" value="male" required>
+            <label for="male">Мужской</label><br>
+            <input type="radio" id="female" name="gender" value="female">
+            <label for="female">Женский</label>
+        </p>
+        <p>
+            <label for="languages">Любимый язык программирования:</label><br>
+            <select id="languages" name="languages[]" multiple size="6">
+                <option value="pascal">Pascal</option>
+                <option value="c">C</option>
+                <option value="cpp">C++</option>
+                <option value="javascript">JavaScript</option>
+                <option value="php">PHP</option>
+                <option value="python">Python</option>
+                <option value="java">Java</option>
+                <option value="haskel">Haskel</option>
+                <option value="clojure">Clojure</option>
+                <option value="prolog">Prolog</option>
+                <option value="scala">Scala</option>
+            </select>
+        </p>
+        <p>
+<label for="bio">Биография:</label><br>
+            <textarea id="bio" name="bio" rows="5" cols="50" placeholder="Расскажите о себе..."></textarea>
+        </p>
+        <p>
+            <input type="checkbox" id="agreement" name="agreement" required>
+            <label for="agreement">С контрактом ознакомлен(а)</label></p>
+        <p>
+            <button type="submit">Сохранить</button>
+        </p>
+    </form>
+</body>
+</html>
 
 
