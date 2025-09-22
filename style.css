@@ -184,7 +184,7 @@ h2 {
 
 
 
-/* Table styles */
+/* Таблица */
 .styled-table {
   width: 100%;
   border-collapse: collapse;
@@ -214,8 +214,6 @@ h2 {
   transition: all 0.3s ease;
 }
 
-
-
 /* Четные строки */
 .styled-table tbody tr:nth-child(even) {
   background-color: #f8f9fa;
@@ -226,9 +224,6 @@ h2 {
   background-color: #c4b3e8;
 }
 
-
-
-
 /* Ховер-эффект */
 .styled-table tbody tr:hover {
   background-color: #e3f2fd;
@@ -236,20 +231,21 @@ h2 {
   box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
 }
 
-/* Стиль для строки с итогами */
-.styled-table tbody tr:last-child {
+/* Строка с итогами */
+.styled-table tbody tr.summary-row {
   background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
   color: white;
   font-weight: bold;
+  text-align: center;
 }
 
-.styled-table tbody tr:last-child:hover {
+.styled-table tbody tr.summary-row:hover {
   background: linear-gradient(135deg, #2980b9 0%, #2573a7 100%);
   transform: none;
   box-shadow: none;
 }
 
-.styled-table tbody tr:last-child td {
+.styled-table tbody tr.summary-row td {
   border-top: 2px solid #ffffff;
   border-bottom: none;
   padding: 15px 12px;
@@ -265,6 +261,11 @@ h2 {
   padding-bottom: 0.5rem;
   display: inline-block;
 }
+
+
+
+
+
 
 /* Стиль для строки с итогами  */
 .summary-row {
