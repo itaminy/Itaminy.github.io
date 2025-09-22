@@ -221,7 +221,7 @@ h2 {
 
 /* Нечетные строки */
 .styled-table tbody tr:nth-child(odd) {
-  background-color: #c4b3e8;
+  background-color: #8abfe3;
 }
 
 /* Ховер-эффект */
