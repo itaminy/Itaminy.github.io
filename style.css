@@ -261,7 +261,13 @@ h2 {
   display: inline-block;
 }
 
-
+/* Стиль для строки с итогами (по желанию) */
+.summary-row {
+    background-color: #3498db;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+}
 
 
 /* Стиль для строки с итогами */
