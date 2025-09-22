@@ -181,41 +181,30 @@ h2 {
     text-decoration: underline;
 }
 
-/* Table styles */
-.table-section {
-    margin: 2rem 0;
-    overflow-x: auto;
+.styled-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
 }
 
-/* Стили для таблицы */
-table {
-    width: 100%;
-    border-collapse: collapse;
-    background-color: white;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    margin-bottom: 20px;
-    font-family: Arial, sans-serif;
+.styled-table th,
+.styled-table td {
+  border: 1px solid #999;
+  padding: 10px;
+  text-align: center;
 }
 
-th, td {
-    border: 1px solid #ddd;
-    padding: 12px;
-    text-align: left;
+.styled-table thead {
+  background-color: #444;
+  color: #fff;
 }
 
-th {
-    background-color: #3498db;
-    color: white;
-    font-weight: bold;
+.styled-table tbody tr:nth-child(odd) {
+  background-color: #eee;
 }
 
-/* Разный фон для четных и нечетных строк */
-tr:nth-child(even) {
-    background-color: #f8f9fa; /* Светло-серый для четных строк */
-}
-
-tr:nth-child(odd) {
-    background-color: #ffffff; /* Белый для нечетных строк */
+.styled-table tbody tr:nth-child(even) {
+  background-color: #fff;
 }
 
 /* Стиль для строки с итогами */
