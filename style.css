@@ -214,6 +214,8 @@ h2 {
   transition: all 0.3s ease;
 }
 
+
+
 /* Четные строки */
 .styled-table tbody tr:nth-child(even) {
   background-color: #f8f9fa;
@@ -221,8 +223,11 @@ h2 {
 
 /* Нечетные строки */
 .styled-table tbody tr:nth-child(odd) {
-  background-color: #ffffff;
+  background-color: #c4b3e8;
 }
+
+
+
 
 /* Ховер-эффект */
 .styled-table tbody tr:hover {
@@ -261,7 +266,7 @@ h2 {
   display: inline-block;
 }
 
-/* Стиль для строки с итогами (по желанию) */
+/* Стиль для строки с итогами  */
 .summary-row {
     background-color: #3498db;
     color: white;
@@ -289,7 +294,7 @@ h2 {
 
 /* Стиль для строки с итогами */
 tr:last-child {
-    background-color: #e8f4fc; /* Голубой фон для итоговой строки */
+    background-color: #e8f4fc; 
     font-weight: bold;
     text-align: center;
 }
