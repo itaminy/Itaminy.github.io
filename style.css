@@ -187,35 +187,52 @@ h2 {
     overflow-x: auto;
 }
 
+/* Стили для таблицы */
 table {
     width: 100%;
     border-collapse: collapse;
-    margin: 1rem 0;
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+    font-family: Arial, sans-serif;
 }
 
 th, td {
-    padding: 12px 15px;
-    text-align: left;
     border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
 }
 
 th {
     background-color: #3498db;
     color: white;
+    font-weight: bold;
 }
 
+/* Разный фон для четных и нечетных строк */
 tr:nth-child(even) {
-    background-color: #f2f2f2;
+    background-color: #f8f9fa; /* Светло-серый для четных строк */
 }
 
 tr:nth-child(odd) {
-    background-color: #ffffff;
+    background-color: #ffffff; /* Белый для нечетных строк */
+}
+
+/* Стиль для строки с итогами */
+tr:last-child {
+    background-color: #e8f4fc; /* Голубой фон для итоговой строки */
+    font-weight: bold;
+    text-align: center;
 }
 
 tr:last-child td {
-    background-color: #e8f4f8;
-    font-weight: bold;
-    text-align: center;
+    border-top: 2px solid #3498db;
+}
+
+/* Ховер-эффект для строк */
+tr:hover {
+    background-color: #e3f2fd;
+    transition: background-color 0.3s ease;
 }
 
 /* Form styles */
