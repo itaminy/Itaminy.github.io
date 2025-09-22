@@ -181,6 +181,9 @@ h2 {
     text-decoration: underline;
 }
 
+
+
+
 .styled-table {
   width: 100%;
   border-collapse: collapse;
@@ -208,6 +211,9 @@ h2 {
 .styled-table tbody tr:nth-child(odd) {
   background-color: #fff;
 }
+
+
+
 
 /* Стиль для строки с итогами */
 .styled-table tr:last-child {
