@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Учебный сайт</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo-name">
+                <div class="logo-img">WS</div>
+                <span class="site-name">Сайт GUSSS</span>
+            </div>
+            <nav id="main-nav">
+                <a href="https://yandex.ru/search/?text=hello&search_source=dzen_desktop_safe&lr=35">Ссылка 1</a>
+                <a href="https://github.com/itaminy/Itaminy.github.io/blob/main/about/file">Ссылка 2</a>
+                <a href="https://kubsu.ru">Ссылка 3</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="content">
+            <h2>Пример ссылок, таблицы, формы</h2>
+            
+<section id="table" class="table-section">
+    <h1>Пример таблицы</h1>
+    <table class="styled-table">
+        <thead>
+            <tr>
+                <th rowspan="2">№</th>
+                <th colspan="2">ФИ</th>
+                <th rowspan="2">Должность</th>
+                <th rowspan="2">Зарплата</th>
+            </tr>
+        <tr>
+            <th>Имя</th>
+            <th>Фамилия</th>
+        </tr>
+        </thead>
+        <tbody>
+            <tr><td>1</td><td>Иван</td><td>Иванов</td><td>Разработчик</td><td>100 000 руб.</td></tr>
+            <tr><td>2</td><td>Петр</td><td>Петров</td><td>Дизайнер</td><td>105 000 руб.</td></tr>
+            <tr><td>3</td><td>Иван</td><td>Лебедев</td><td>Работяга</td><td>50 000 руб.</td></tr>
+            <tr><td>4</td><td>Глеб</td><td>Новиков</td><td>Проектеровщик</td><td>150 000 руб.</td></tr>
+            <tr><td>5</td><td>Арсений</td><td>Зубков</td><td>Зам.Директора</td><td>200 000 руб.</td></tr>
+            <tr><td>6</td><td>Кирилл</td><td>Гусев</td><td>Директор</td><td>350 000 руб.</td></tr>
+        </tbody>
+    </table>
+</section>
+
+            <section class="links-section">
+                <h1>Различные типы ссылок</h1>
+                <div class="links-grid">
+                    <!-- Ссылка 1 -->
+                    <div class="link-item">
+                        <a href="http://kubsu.ru">КубГУ</a>
+                    </div>
+                    
+                    <!-- Ссылка 2 -->
+                    <div class="link-item">
+                        <a href="https://kubsu.ru">КубГУ (HTTPS)</a>
+                    </div>
+                    
+                    <!-- Картинка 3 -->
+                    <li>
+                        <img src="image.jpg" alt="Цветок" style="width: 400px;" />
+                    </li>
+                    
+                    <!-- Ссылки 4-14 -->
+                    <div class="link-item">
+                        <a href="/index.html">/index.html</a>
+                    </div>
+                    
+                    <div class="link-item">
+                        <a href="/">/</a>
+                    </div>
+                    
+                    <div class="link-item">
+                        <a href="#table">#таблица</a>
+                    </div>
+                    
+                    <div class="link-item">
+                        <a href="https://yandex.ru/search/?text=hello&search_source=dzen_desktop_safe&lr=35">Поиск Яндекс</a>
+                    </div>
+                    
+                    <div class="link-item">
+                        <a href="https://github.com/itaminy/Itaminy.github.io/blob/main/1/Page%201">page1.html</a>
+                    </div>
+                    
+                    <div class="link-item">
+                        <a href="https://github.com/itaminy/Itaminy.github.io/blob/main/about/file">Файл</a>
+                    </div>
+                    
+                    <div class="link-item">
+                        <a href="../globIndex1.html">../globIndex1.html</a>
+                    </div>
+                    
+                    <div class="link-item">
+                        <a href="../globIndex.html">../globIndex.html</a>
+                    </div>
+                    
+                    <div class="link-item">
+                        <a href="https://developer.mozilla.org/ru/" target="_blank">MDN (новая вкладка)</a>
+                    </div>
+                    
+                    <div class="link-item">
+                        <a href="https://ru.wikipedia.org/wiki/HTML#История" target="_blank">HTML#История</a>
+                    </div>
+                    
+                    <div class="link-item">
+                        <a href="">Пустой href</a>
+                    </div>
+                    
+                    <!-- Картинка с областями -->
+                    <div class="image-item">
+                        <img src="https://dummyimage.com/420x220/0f172a/ffffff.png&text=Image+1" alt="Картинка 2 с областями" usemap="#map" width="420" height="220">
+                        <map name="map">
+                            <area shape="rect" coords="0,0,120,50" href="https://kubsu.ru/" alt="Прямоугольник → kubsu.ru" target="_blank">
+                            <area shape="circle" coords="110,110,60" href="https://developer.mozilla.org/ru/" alt="Круг → MDN" target="_blank">
+                        </map>
+                    </div>
+                    
+                    <!-- Ссылки 16-21 -->
+                    <div class="link-item">
+                        <a>Без href</a>
+                    </div>
+                    
+                    <div class="link-item">
+                        <a href="https://example.com/hidden" rel="nofollow">nofollow ссылка</a>
+                    </div>
+                    
+                    <div class="link-item">
+                        <a href="https://example.com/noindex" rel="noindex">noindex ссылка</a>
+                    </div>
+                    
+                    <div class="link-item">
+                        <a href="ftp://user:password@ftp.kubsu.ru/public/file.pdf">Скачать документ (FTP)</a>
+                    </div>
+                    
+                    <!-- Нумерованный список ссылок 20-22 -->
+                    <div class="list-item">
+                        <ol>
+                            <li><a href="https://httpwg.org/specs/rfc9110.html" title="HTTP-семантика">HTTP-семантика</a></li>
+                            <li><a href="https://www.w3.org/TR/selectors-4/#data-model" title="model">Модель данных</a></li>
+                            <li><a href="https://html.spec.whatwg.org/#toc-introduction" title="Introduction">Introduction</a></li>
+                        </ol>
+                    </div>
+                </div>
+            </section>
+
+            <section id="form" class="form-section">
+                <h1>Анкета</h1>
+                <form action="#" method="post">
+                    <p>
+                        <label for="fio">ФИО:</label>
+                        <input type="text" id="fio" name="fio" required>
+                    </p>
+                    <p>
+                        <label for="phone">Телефон:</label>
+                        <input type="tel" id="phone" name="phone" pattern="[\+]\d{1}\s?[\(]\d{3}[\)]\s?\d{3}[\-]\d{2}[\-]\d{2}" placeholder="+7(999)999-99-99" required>
+                    </p>
+                    <p>
+                        <label for="email">E-mail:</label>
+                        <input type="email" id="email" name="email" placeholder="example@mail.ru" required>
+                    </p>
+                    <p>
+                        <label for="birthdate">Дата рождения:</label>
+                        <input type="date" id="birthdate" name="birthdate" required>
+                    </p>
+                    <p>
+                        <span class="label">Пол:</span>
+                        <span class="radio-group">
+                            <input type="radio" id="male" name="gender" value="male" required>
+                            <label for="male">Мужской</label>
+                            <input type="radio" id="female" name="gender" value="female">
+                            <label for="female">Женский</label>
+                        </span>
+                    </p>
+                    <p>
+                        <label for="languages">Любимый язык программирования:</label>
+                        <select id="languages" name="languages[]" multiple size="6">
+                            <option value="pascal">Pascal</option>
+                            <option value="c">C</option>
+                            <option value="cpp">C++</option>
+                            <option value="javascript">JavaScript</option>
+                            <option value="php">PHP</option>
+                            <option value="python">Python</option>
+                            <option value="java">Java</option>
+                            <option value="haskel">Haskel</option>
+                            <option value="clojure">Clojure</option>
+                            <option value="prolog">Prolog</option>
+                            <option value="scala">Scala</option>
+                        </select>
+                    </p>
+                    <p>
+                        <label for="bio">Биография:</label>
+                        <textarea id="bio" name="bio" rows="5" placeholder="Расскажите о себе..."></textarea>
+                    </p>
+                    <p>
+                        <input type="checkbox" id="agreement" name="agreement" required>
+                        <label for="agreement">С контрактом ознакомлен(а)</label>
+                    </p>
+                    <button type="submit">Сохранить</button>
+                </form>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <p>&copy; Kirill Gusss</p>
+        </div>
+    </footer>
+</body>
+</html>
+
