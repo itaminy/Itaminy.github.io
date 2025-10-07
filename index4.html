@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Учебный сайт</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         /* Mobile First - стили для мобильных */
         * {
@@ -97,6 +99,8 @@
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
             margin: 1rem auto;
             width: 100%;
+            display: flex;
+            flex-direction: column;
         }
 
         h1, h2 {
@@ -114,7 +118,7 @@
         .table-section {
             width: 100%;
             margin: 2rem 0;
-            order: 2; /* Таблица будет второй по порядку */
+            order: 2; /* Таблица будет второй по порядку на мобильных */
         }
 
         .table-section h1 {
@@ -135,7 +139,6 @@
             overflow: hidden;
             box-shadow: 0 4px 6px rgba(0,0,0,0.1);
             font-size: 0.95rem;
-            display: table; /* Показываем на десктопе */
         }
 
         .styled-table th {
@@ -225,27 +228,15 @@
         /* Links section */
         .links-section {
             margin-top: 3rem;
-            order: 1; /* Ссылки будут первыми по порядку */
+            order: 1; /* Ссылки будут первыми по порядку на мобильных */
         }
 
-        .links-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 20px;
-            margin-top: 1rem;
-        }
-
-        /* Универсальные стили для ВСЕХ элементов в сетке */
-        .links-grid > * {
+        .link-item, .image-item, .list-item {
             padding: 15px;
             background-color: #f8f9fa;
             border-left: 4px solid #3498db;
             border-radius: 5px;
-        }
-
-        /* Специфические стили для разных типов элементов */
-        .link-item {
-            /* Наследует стили от .links-grid > * */
+            height: 100%;
         }
 
         .link-item a {
@@ -253,7 +244,6 @@
             text-decoration: none;
             display: block;
             padding: 5px 0;
-            width: 100%;
         }
 
         .link-item a:hover {
@@ -261,12 +251,7 @@
             text-decoration: underline;
         }
 
-        /* Стили для изображений */
-        .image-item {
-            text-align: center;
-        }
-
-        .image-item img {
+        .image-container img {
             max-width: 100%;
             height: auto;
             border: 2px solid #ddd;
@@ -274,15 +259,14 @@
             margin-bottom: 10px;
         }
 
-        /* Стили для списков */
+        /* List styles */
         .list-item ol {
-            margin-left: 1.5rem;
+            margin-left: 1rem;
             margin-top: 0.5rem;
         }
 
         .list-item ol li {
-            margin-bottom: 0.5rem;
-            list-style-type: decimal;
+            margin-bottom: 0.3rem;
         }
 
         .list-item ol a {
@@ -334,13 +318,6 @@
             resize: vertical;
         }
 
-        .radio-group {
-            display: flex;
-            flex-direction: column;
-            gap: 5px;
-            margin-top: 0.5rem;
-        }
-
         .radio-group label {
             display: inline;
             font-weight: normal;
@@ -378,6 +355,24 @@
             padding: 0 15px;
         }
 
+        /* Image styles */
+        .image-item img {
+            max-width: 100%;
+            height: auto;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        /* Исправление для li в links-grid */
+        .links-grid li {
+            list-style: none;
+            padding: 15px;
+            background-color: #f8f9fa;
+            border-left: 4px solid #3498db;
+            border-radius: 5px;
+        }
+
         /* Mobile styles */
         @media (max-width: 768px) {
             /* Показываем мобильную таблицу и скрываем десктопную */
@@ -390,11 +385,6 @@
             }
 
             /* Меняем порядок секций для мобильных */
-            .content {
-                display: flex;
-                flex-direction: column;
-            }
-
             .links-section {
                 order: 1;
             }
@@ -428,15 +418,6 @@
                 text-align: left;
             }
 
-            .links-grid {
-                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            }
-
-            .radio-group {
-                flex-direction: row;
-                gap: 15px;
-            }
-
             button {
                 width: auto;
             }
@@ -468,10 +449,6 @@
         @media (min-width: 1200px) {
             .container, .header-container, .footer-container {
                 max-width: 1140px;
-            }
-
-            .styled-table {
-                font-size: 1rem;
             }
         }
     </style>
@@ -650,71 +627,203 @@
         <!-- Потом ссылки -->
         <section class="links-section">
             <h1>Различные типы ссылок</h1>
-            <div class="links-grid">
-                <!-- Все элементы теперь имеют правильные классы -->
-                <div class="link-item"><a href="http://kubsu.ru">КубГУ</a></div>
-                <div class="link-item"><a href="https://kubsu.ru">КубГУ (HTTPS)</a></div>
-                <div class="image-item"><img src="image.jpg" alt="Цветок" style="width: 100%; max-width: 400px;" /></div>
-                <div class="link-item"><a href="/.idea/index.html">/index.html</a></div>
-                <div class="link-item"><a href="/">/</a></div>
-                <div class="link-item"><a href="#table">#таблица</a></div>
-                <div class="link-item"><a href="https://yandex.ru/search/?text=hello&search_source=dzen_desktop_safe&lr=35">Поиск Яндекс</a></div>
-                <div class="link-item"><a href="https://github.com/itaminy/Itaminy.github.io/blob/main/1/Page%201">page1.html</a></div>
-                <div class="link-item"><a href="https://github.com/itaminy/Itaminy.github.io/blob/main/about/file">Файл</a></div>
-                <div class="link-item"><a href="../globIndex1.html">../globIndex1.html</a></div>
-                <div class="link-item"><a href="../globIndex.html">../globIndex.html</a></div>
-                <div class="link-item"><a href="https://developer.mozilla.org/ru/" target="_blank">MDN (новая вкладка)</a></div>
-                <div class="link-item"><a href="https://ru.wikipedia.org/wiki/HTML#История" target="_blank">HTML#История</a></div>
-                <div class="link-item"><a href="">Пустой href</a></div>
-                <div class="image-item">
-                    <img src="https://dummyimage.com/420x220/0f172a/ffffff.png&text=Image+1" alt="Картинка 2 с областями" usemap="#map" width="420" height="220">
-                    <map name="map">
-                        <area shape="rect" coords="0,0,120,50" href="https://kubsu.ru/" alt="Прямоугольник → kubsu.ru" target="_blank">
-                        <area shape="circle" coords="110,110,60" href="https://developer.mozilla.org/ru/" alt="Круг → MDN" target="_blank">
-                    </map>
+            <div class="row g-3"> <!-- Bootstrap сетка -->
+                <!-- Ссылка 1 -->
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="link-item">
+                        <a href="http://kubsu.ru">КубГУ</a>
+                    </div>
                 </div>
-                <div class="link-item"><a>Без href</a></div>
-                <div class="link-item"><a href="https://example.com/hidden" rel="nofollow">nofollow ссылка</a></div>
-                <div class="link-item"><a href="https://example.com/noindex" rel="noindex">noindex ссылка</a></div>
-                <div class="link-item"><a href="ftp://user:password@ftp.kubsu.ru/public/file.pdf">Скачать документ (FTP)</a></div>
-                <div class="list-item">
-                    <ol>
-                        <li><a href="https://httpwg.org/specs/rfc9110.html" title="HTTP-семантика">HTTP-семантика</a></li>
-                        <li><a href="https://www.w3.org/TR/selectors-4/#data-model" title="model">Модель данных</a></li>
-                        <li><a href="https://html.spec.whatwg.org/#toc-introduction" title="Introduction">Introduction</a></li>
-                    </ol>
+
+                <!-- Ссылка 2 -->
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="link-item">
+                        <a href="https://kubsu.ru">КубГУ (HTTPS)</a>
+                    </div>
+                </div>
+
+                <!-- Картинка 3 -->
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="image-item">
+                        <img src="image.jpg" alt="Цветок" class="img-fluid" />
+                    </div>
+                </div>
+
+                <!-- Ссылки 4-14 -->
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="link-item">
+                        <a href="/index.html">/index.html</a>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="link-item">
+                        <a href="/">/</a>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="link-item">
+                        <a href="#table">#таблица</a>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="link-item">
+                        <a href="https://yandex.ru/search/?text=hello&search_source=dzen_desktop_safe&lr=35">Поиск Яндекс</a>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="link-item">
+                        <a href="https://github.com/itaminy/Itaminy.github.io/blob/main/1/Page%201">page1.html</a>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="link-item">
+                        <a href="https://github.com/itaminy/Itaminy.github.io/blob/main/about/file">Файл</a>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="link-item">
+                        <a href="../globIndex1.html">../globIndex1.html</a>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="link-item">
+                        <a href="../globIndex.html">../globIndex.html</a>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="link-item">
+                        <a href="https://developer.mozilla.org/ru/" target="_blank">MDN (новая вкладка)</a>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="link-item">
+                        <a href="https://ru.wikipedia.org/wiki/HTML#История" target="_blank">HTML#История</a>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="link-item">
+                        <a href="">Пустой href</a>
+                    </div>
+                </div>
+
+                <!-- Картинка с областями -->
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="image-item">
+                        <img src="https://dummyimage.com/420x220/0f172a/ffffff.png&text=Image+1" alt="Картинка 2 с областями" usemap="#map" class="img-fluid">
+                        <map name="map">
+                            <area shape="rect" coords="0,0,120,50" href="https://kubsu.ru/" alt="Прямоугольник → kubsu.ru" target="_blank">
+                            <area shape="circle" coords="110,110,60" href="https://developer.mozilla.org/ru/" alt="Круг → MDN" target="_blank">
+                        </map>
+                    </div>
+                </div>
+
+                <!-- Ссылки 16-21 -->
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="link-item">
+                        <a>Без href</a>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="link-item">
+                        <a href="https://example.com/hidden" rel="nofollow">nofollow ссылка</a>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="link-item">
+                        <a href="https://example.com/noindex" rel="noindex">noindex ссылка</a>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="link-item">
+                        <a href="ftp://user:password@ftp.kubsu.ru/public/file.pdf">Скачать документ (FTP)</a>
+                    </div>
+                </div>
+
+                <!-- Нумерованный список ссылок 20-22 -->
+                <div class="col-12">
+                    <div class="list-item">
+                        <ol>
+                            <li><a href="https://httpwg.org/specs/rfc9110.html" title="HTTP-семантика">HTTP-семантика</a></li>
+                            <li><a href="https://www.w3.org/TR/selectors-4/#data-model" title="model">Модель данных</a></li>
+                            <li><a href="https://html.spec.whatwg.org/#toc-introduction" title="Introduction">Introduction</a></li>
+                        </ol>
+                    </div>
                 </div>
             </div>
         </section>
 
         <section id="form" class="form-section">
             <h1>Анкета</h1>
-            <form action="#" method="post">
-                <p><label for="fio">ФИО:</label><input type="text" id="fio" name="fio" required></p>
-                <p><label for="phone">Телефон:</label><input type="tel" id="phone" name="phone" pattern="[\+]\d{1}\s?[\(]\d{3}[\)]\s?\d{3}[\-]\d{2}[\-]\d{2}" placeholder="+7(999)999-99-99" required></p>
-                <p><label for="email">E-mail:</label><input type="email" id="email" name="email" placeholder="example@mail.ru" required></p>
-                <p><label for="birthdate">Дата рождения:</label><input type="date" id="birthdate" name="birthdate" required></p>
-                <p>
-                    <span class="label">Пол:</span>
-                    <span class="radio-group">
-                        <input type="radio" id="male" name="gender" value="male" required>
-                        <label for="male">Мужской</label>
-                        <input type="radio" id="female" name="gender" value="female">
-                        <label for="female">Женский</label>
-                    </span>
-                </p>
-                <p>
-                    <label for="languages">Любимый язык программирования:</label>
-                    <select id="languages" name="languages[]" multiple size="6">
-                        <option value="pascal">Pascal</option><option value="c">C</option><option value="cpp">C++</option>
-                        <option value="javascript">JavaScript</option><option value="php">PHP</option><option value="python">Python</option>
-                        <option value="java">Java</option><option value="haskel">Haskel</option><option value="clojure">Clojure</option>
-                        <option value="prolog">Prolog</option><option value="scala">Scala</option>
+            <form action="#" method="post" class="row g-3"> <!-- Bootstrap сетка для формы -->
+                <div class="col-12 col-md-6">
+                    <label for="fio" class="form-label">ФИО:</label>
+                    <input type="text" class="form-control" id="fio" name="fio" required>
+                </div>
+                <div class="col-12 col-md-6">
+                    <label for="phone" class="form-label">Телефон:</label>
+                    <input type="tel" class="form-control" id="phone" name="phone" pattern="[\+]\d{1}\s?[\(]\d{3}[\)]\s?\d{3}[\-]\d{2}[\-]\d{2}" placeholder="+7(999)999-99-99" required>
+                </div>
+                <div class="col-12 col-md-6">
+                    <label for="email" class="form-label">E-mail:</label>
+                    <input type="email" class="form-control" id="email" name="email" placeholder="example@mail.ru" required>
+                </div>
+                <div class="col-12 col-md-6">
+                    <label for="birthdate" class="form-label">Дата рождения:</label>
+                    <input type="date" class="form-control" id="birthdate" name="birthdate" required>
+                </div>
+                <div class="col-12">
+                    <label class="form-label">Пол:</label>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" id="male" name="gender" value="male" required>
+                        <label class="form-check-label" for="male">Мужской</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" id="female" name="gender" value="female">
+                        <label class="form-check-label" for="female">Женский</label>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <label for="languages" class="form-label">Любимый язык программирования:</label>
+                    <select class="form-select" id="languages" name="languages[]" multiple size="6">
+                        <option value="pascal">Pascal</option>
+                        <option value="c">C</option>
+                        <option value="cpp">C++</option>
+                        <option value="javascript">JavaScript</option>
+                        <option value="php">PHP</option>
+                        <option value="python">Python</option>
+                        <option value="java">Java</option>
+                        <option value="haskel">Haskel</option>
+                        <option value="clojure">Clojure</option>
+                        <option value="prolog">Prolog</option>
+                        <option value="scala">Scala</option>
                     </select>
-                </p>
-                <p><label for="bio">Биография:</label><textarea id="bio" name="bio" rows="5" placeholder="Расскажите о себе..."></textarea></p>
-                <p><input type="checkbox" id="agreement" name="agreement" required><label for="agreement">С контрактом ознакомлен(а)</label></p>
-                <button type="submit">Сохранить</button>
+                </div>
+                <div class="col-12">
+                    <label for="bio" class="form-label">Биография:</label>
+                    <textarea class="form-control" id="bio" name="bio" rows="5" placeholder="Расскажите о себе..."></textarea>
+                </div>
+                <div class="col-12">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="agreement" name="agreement" required>
+                        <label class="form-check-label" for="agreement">С контрактом ознакомлен(а)</label>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <button type="submit" class="btn btn-primary">Сохранить</button>
+                </div>
             </form>
         </section>
     </div>
@@ -725,5 +834,8 @@
         <p>&copy; Kirill Gusss</p>
     </div>
 </footer>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
