@@ -1,0 +1,637 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Учебный сайт</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Mobile First - стили для мобильных */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Header styles */
+        header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 1rem 0;
+            width: 100%;
+        }
+
+        .header-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        .logo-name {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-img {
+            width: 40px;
+            height: 40px;
+            background-color: #3498db;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+        }
+
+        .site-name {
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        /* Navigation - мобильная версия */
+        nav {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            width: 100%;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px;
+            border-radius: 3px;
+            transition: background-color 0.3s;
+            text-align: center;
+            width: 100%;
+        }
+
+        nav a:hover {
+            background-color: #3498db;
+        }
+
+        /* Main content */
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 0 15px;
+            width: 100%;
+        }
+
+        .content {
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            margin: 1rem auto;
+            width: 100%;
+        }
+
+        h1, h2 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+        }
+
+        h2 {
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Таблица */
+        .styled-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            font-size: 0.95rem;
+        }
+
+        .styled-table th {
+            background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+            color: white;
+            padding: 15px 12px;
+            text-align: center;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border: none;
+        }
+
+        .styled-table td {
+            padding: 12px;
+            text-align: center;
+            border: none;
+            border-bottom: 1px solid #e0e0e0;
+            transition: all 0.3s ease;
+        }
+
+        /* Четные строки */
+        .styled-table tbody tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+
+        /* Нечетные строки */
+        .styled-table tbody tr:nth-child(odd) {
+            background-color: #8abfe3;
+        }
+
+        /* Ховер-эффект */
+        .styled-table tbody tr:hover {
+            background-color: #e3f2fd;
+            transform: translateY(-1px);
+            box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+        }
+
+
+
+
+
+        .styled-table tbody tr.summary-row td {
+            border-top: 2px solid #ffffff;
+            border-bottom: none;
+            padding: 15px 12px;
+        }
+
+        /* Заголовок таблицы */
+        .table-section h1 {
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 0.5rem;
+            display: inline-block;
+        }
+
+        /* Links section */
+        .links-section {
+            margin-top: 3rem;
+        }
+
+
+
+        .link-item, .image-item, .list-item {
+            padding: 15px;
+            background-color: #f8f9fa;
+            border-left: 4px solid #3498db;
+            border-radius: 5px;
+        }
+
+        .link-item a {
+            color: #2c3e50;
+            text-decoration: none;
+            display: block;
+            padding: 5px 0;
+        }
+
+        .link-item a:hover {
+            color: #3498db;
+            text-decoration: underline;
+        }
+
+
+
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        /* List styles */
+        .list-item ol {
+            margin-left: 1rem;
+            margin-top: 0.5rem;
+        }
+
+        .list-item ol li {
+            margin-bottom: 0.3rem;
+        }
+
+        .list-item ol a {
+            color: #3498db;
+            text-decoration: none;
+        }
+
+        .list-item ol a:hover {
+            text-decoration: underline;
+        }
+
+        /* Form styles */
+        .form-section {
+            margin-top: 2rem;
+            padding-top: 1rem;
+            border-top: 1px solid #ddd;
+        }
+
+        form {
+            margin-top: 1rem;
+        }
+
+        form p {
+            margin-bottom: 1rem;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="tel"],
+        input[type="email"],
+        input[type="date"],
+        select,
+        textarea {
+            width: 100%;
+            max-width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+
+
+        .radio-group label {
+            display: inline;
+            font-weight: normal;
+        }
+
+        button {
+            background-color: #3498db;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1rem;
+            margin-top: 1rem;
+            width: 100%;
+        }
+
+        button:hover {
+            background-color: #2980b9;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 1rem 0;
+            width: 100%;
+            margin-top: 2rem;
+        }
+
+        .footer-container {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        /* Image styles */
+        .image-item img {
+            max-width: 100%;
+            height: auto;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        /* Исправление для li в links-grid */
+        .links-grid li {
+            list-style: none;
+            padding: 15px;
+            background-color: #f8f9fa;
+            border-left: 4px solid #3498db;
+            border-radius: 5px;
+        }
+
+        /* Tablet and Desktop styles */
+        @media (min-width: 769px) {
+            .header-container {
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            nav {
+                flex-direction: row;
+                width: auto;
+                gap: 20px;
+            }
+
+            nav a {
+                width: auto;
+                padding: 5px 10px;
+                text-align: left;
+            }
+
+            button {
+                width: auto;
+            }
+
+            input[type="text"],
+            input[type="tel"],
+            input[type="email"],
+            input[type="date"],
+            select,
+            textarea {
+                max-width: 400px;
+            }
+        }
+
+        /* Large desktop styles */
+        @media (min-width: 1200px) {
+            .container, .header-container, .footer-container {
+                max-width: 1140px;
+            }
+        }
+    </style>
+</head>
+<body>
+<header>
+    <div class="header-container">
+        <div class="logo-name">
+            <div class="logo-img">WS</div>
+            <span class="site-name">Сайт GUSSS</span>
+        </div>
+        <nav id="main-nav">
+            <a href="https://yandex.ru/search/?text=hello&search_source=dzen_desktop_safe&lr=35">Ссылка 1</a>
+            <a href="https://github.com/itaminy/Itaminy.github.io/blob/main/about/file">Ссылка 2</a>
+            <a href="https://kubsu.ru">Ссылка 3</a>
+        </nav>
+    </div>
+</header>
+
+<main class="container">
+    <div class="content">
+        <h2>Пример ссылок, таблицы, формы</h2>
+
+        <!-- Сначала таблица -->
+        <section id="table" class="table-section">
+            <h1>Пример таблицы</h1>
+            <table class="styled-table">
+                <thead>
+                <tr>
+                    <th rowspan="2">№</th>
+                    <th colspan="2">ФИ</th>
+                    <th rowspan="2">Должность</th>
+                    <th rowspan="2">Зарплата</th>
+                </tr>
+                <tr>
+                    <th>Имя</th>
+                    <th>Фамилия</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr><td>1</td><td>Иван</td><td>Иванов</td><td>Разработчик</td><td>100 000 руб.</td></tr>
+                <tr><td>2</td><td>Петр</td><td>Петров</td><td>Дизайнер</td><td>105 000 руб.</td></tr>
+                <tr><td>3</td><td>Иван</td><td>Лебедев</td><td>Работяга</td><td>50 000 руб.</td></tr>
+                <tr><td>4</td><td>Глеб</td><td>Новиков</td><td>Проектеровщик</td><td>150 000 руб.</td></tr>
+                <tr><td>5</td><td>Арсений</td><td>Зубков</td><td>Зам.Директора</td><td>200 000 руб.</td></tr>
+                <tr><td>6</td><td>Кирилл</td><td>Гусев</td><td>Директор</td><td>350 000 руб.</td></tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Потом ссылки -->
+        <section class="links-section">
+            <h1>Различные типы ссылок</h1>
+            <div class="row g-3"> <!-- Bootstrap сетка -->
+                <!-- Ссылка 1 -->
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="link-item">
+                        <a href="http://kubsu.ru">КубГУ</a>
+                    </div>
+                </div>
+
+                <!-- Ссылка 2 -->
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="link-item">
+                        <a href="https://kubsu.ru">КубГУ (HTTPS)</a>
+                    </div>
+                </div>
+
+                <!-- Картинка 3 -->
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="image-item">
+                        <img src="image.jpg" alt="Цветок" style="width: 400px;" />
+                    </div>
+                </div>
+
+                <!-- Ссылки 4-14 -->
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="link-item">
+                        <a href="/index.html">/index.html</a>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="link-item">
+                        <a href="/">/</a>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="link-item">
+                        <a href="#table">#таблица</a>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="link-item">
+                        <a href="https://yandex.ru/search/?text=hello&search_source=dzen_desktop_safe&lr=35">Поиск Яндекс</a>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="link-item">
+                        <a href="https://github.com/itaminy/Itaminy.github.io/blob/main/1/Page%201">page1.html</a>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="link-item">
+                        <a href="https://github.com/itaminy/Itaminy.github.io/blob/main/about/file">Файл</a>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="link-item">
+                        <a href="../globIndex1.html">../globIndex1.html</a>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="link-item">
+                        <a href="../globIndex.html">../globIndex.html</a>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="link-item">
+                        <a href="https://developer.mozilla.org/ru/" target="_blank">MDN (новая вкладка)</a>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="link-item">
+                        <a href="https://ru.wikipedia.org/wiki/HTML#История" target="_blank">HTML#История</a>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="link-item">
+                        <a href="">Пустой href</a>
+                    </div>
+                </div>
+
+                <!-- Картинка с областями -->
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="image-item">
+                        <img src="https://dummyimage.com/420x220/0f172a/ffffff.png&text=Image+1" alt="Картинка 2 с областями" usemap="#map" width="420" height="220">
+                        <map name="map">
+                            <area shape="rect" coords="0,0,120,50" href="https://kubsu.ru/" alt="Прямоугольник → kubsu.ru" target="_blank">
+                            <area shape="circle" coords="110,110,60" href="https://developer.mozilla.org/ru/" alt="Круг → MDN" target="_blank">
+                        </map>
+                    </div>
+                </div>
+
+                <!-- Ссылки 16-21 -->
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="link-item">
+                        <a>Без href</a>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="link-item">
+                        <a href="https://example.com/hidden" rel="nofollow">nofollow ссылка</a>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="link-item">
+                        <a href="https://example.com/noindex" rel="noindex">noindex ссылка</a>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="link-item">
+                        <a href="ftp://user:password@ftp.kubsu.ru/public/file.pdf">Скачать документ (FTP)</a>
+                    </div>
+                </div>
+
+                <!-- Нумерованный список ссылок 20-22 -->
+                <div class="col-12">
+                    <div class="list-item">
+                        <ol>
+                            <li><a href="https://httpwg.org/specs/rfc9110.html" title="HTTP-семантика">HTTP-семантика</a></li>
+                            <li><a href="https://www.w3.org/TR/selectors-4/#data-model" title="model">Модель данных</a></li>
+                            <li><a href="https://html.spec.whatwg.org/#toc-introduction" title="Introduction">Introduction</a></li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="form" class="form-section">
+            <h1>Анкета</h1>
+            <form action="#" method="post" class="row g-3"> <!-- Bootstrap сетка для формы -->
+                <div class="col-12 col-md-6">
+                    <label for="fio" class="form-label">ФИО:</label>
+                    <input type="text" class="form-control" id="fio" name="fio" required>
+                </div>
+                <div class="col-12 col-md-6">
+                    <label for="phone" class="form-label">Телефон:</label>
+                    <input type="tel" class="form-control" id="phone" name="phone" pattern="[\+]\d{1}\s?[\(]\d{3}[\)]\s?\d{3}[\-]\d{2}[\-]\d{2}" placeholder="+7(999)999-99-99" required>
+                </div>
+                <div class="col-12 col-md-6">
+                    <label for="email" class="form-label">E-mail:</label>
+                    <input type="email" class="form-control" id="email" name="email" placeholder="example@mail.ru" required>
+                </div>
+                <div class="col-12 col-md-6">
+                    <label for="birthdate" class="form-label">Дата рождения:</label>
+                    <input type="date" class="form-control" id="birthdate" name="birthdate" required>
+                </div>
+                <div class="col-12">
+                    <label class="form-label">Пол:</label>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" id="male" name="gender" value="male" required>
+                        <label class="form-check-label" for="male">Мужской</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" id="female" name="gender" value="female">
+                        <label class="form-check-label" for="female">Женский</label>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <label for="languages" class="form-label">Любимый язык программирования:</label>
+                    <select class="form-select" id="languages" name="languages[]" multiple size="6">
+                        <option value="pascal">Pascal</option>
+                        <option value="c">C</option>
+                        <option value="cpp">C++</option>
+                        <option value="javascript">JavaScript</option>
+                        <option value="php">PHP</option>
+                        <option value="python">Python</option>
+                        <option value="java">Java</option>
+                        <option value="haskel">Haskel</option>
+                        <option value="clojure">Clojure</option>
+                        <option value="prolog">Prolog</option>
+                        <option value="scala">Scala</option>
+                    </select>
+                </div>
+                <div class="col-12">
+                    <label for="bio" class="form-label">Биография:</label>
+                    <textarea class="form-control" id="bio" name="bio" rows="5" placeholder="Расскажите о себе..."></textarea>
+                </div>
+                <div class="col-12">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="agreement" name="agreement" required>
+                        <label class="form-check-label" for="agreement">С контрактом ознакомлен(а)</label>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <button type="submit" class="btn btn-primary">Сохранить</button>
+                </div>
+            </form>
+        </section>
+    </div>
+</main>
+
+<footer>
+    <div class="footer-container">
+        <p>&copy; Kirill Gusss</p>
+    </div>
+</footer>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
